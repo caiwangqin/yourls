@@ -24,7 +24,7 @@ module Yourls
     end
     
     def delete(short_url, options = {})
-      get('delete', options.merge!(:shorturl => short_url)).parsed_response
+      get('delete', options.merge!(:keyword => short_url)).parsed_response
     end
 
     def get(action, query = {})
