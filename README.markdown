@@ -44,7 +44,7 @@ You can then interact with the client to shorten or expand urls or to get statis
         );
         break;
 
-	this fork extend delete for yourls gem:
+	this fork extend delete method for yourls gem:
 
 	yourls.delete('goog')
 
