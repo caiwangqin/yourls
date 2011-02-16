@@ -26,6 +26,30 @@ You can then interact with the client to shorten or expand urls or to get statis
     url.long_url #=> "http://www.google.com"
     url.keyword #=> "goog"
 
+## About this fork
+
+	add delete method for yourls gem.
+
+	update yourls-api.php, insert below code to yourls-api.php:
+
+	// Delete a short link by keyword
+    case 'delete':
+        $keyword = ( isset( $_REQUEST['keyword'] ) ? $_REQUEST['keyword'] : '' );
+        $query = yourls_delete_link_by_keyword( $_REQUEST['keyword'] );
+        $return = array(
+            'keyword'  => $keyword,
+            'simple'   => $query,
+            'message'  => $query,
+            'statusCode' => 200,
+        );
+        break;
+
+	this fork extend delete for yourls gem:
+
+	yourls.delete('goog')
+
+
+
 ## Copyright
 
 Copyright (c) 2010 [Three Stage Media, Inc.](http://www.threestage.com) and licensed under the MIT License (see MIT-LICENSE for details).

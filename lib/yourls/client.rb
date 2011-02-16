@@ -22,6 +22,10 @@ module Yourls
     def shorten(long_url, options = {})
       Yourls::Url.new(get('shorturl', options.merge!(:url => long_url)).parsed_response)
     end
+    
+    def delete(short_url, options = {})
+      Yourls::Url.new(get('delete', options.merge!(:shorturl => short_url)).parsed_response)      
+    end
 
     def get(action, query = {})
       # Prepare the signature
